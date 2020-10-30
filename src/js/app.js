@@ -1,20 +1,19 @@
-/*console.log("Feta er super");
 
-var myObject = {
-    name: "Mads",
-    age: 25,
-    height: 175,
-    // password: "password123"
-};
+var intersectionObserver = new IntersectionObserver(function (entries) {
+  // If intersectionRatio is 0, the target is out of view
+  // and we do not need to do anything.
+  // 1 er hele elementet i viewport 0 er intet af elementet
+  if (entries[0].intersectionRect.bottom <= 500) return;
+  entries[0].target.querySelector("section").style.transform = "translateX(0)";
+  entries[0].target.querySelector("section").style.opacity = "1";
+ 
+});
+  
+var allMydivs = document.querySelectorAll("div");
+  // start observing
+allMydivs.forEach(function (div) {
+  intersectionObserver.observe(div);
+});
+intersectionObserver.unobserve(allMydivs);
 
-//optional chaining "?" er en ny funktion i javascript
-if (myObject?.password == "password123") {
-    console.log("you are logged in");
-    console.log(myObject?.password);
-}*/
-
-function doAlotOfStuff(params ={something, somethingelse, somethingdifferent, somethingentirelyelse}) {
-    while (params?.somethingdifferent) {
-        console.log("yo");
-    }
-}
+// ────────────────────────────────────────────────────────────────────────────────

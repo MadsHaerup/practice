@@ -1,7 +1,7 @@
 {
   "name": "madshaerup",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
